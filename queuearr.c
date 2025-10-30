@@ -3,11 +3,15 @@
 int queue_arr[MAX];
 int rear = -1;
 int front = -1;
+void insert();
+void delete();
+void display();
 void main()
-int choice;
-while(1)
 {
-printf("1.indert\n2.delete\n3.display\n4.exit");
+int choice;
+while (1)
+{
+printf("1.insert\n2.delete\n3.display\n4.exit");
 printf("Enter choice: ");
 scanf('%d',&choice);
 switch(choice){
@@ -17,26 +21,26 @@ case 2: delete();
 break;
 case 3: display();
 break;
-case 4: exit(1)
+case 4: exit(1);
 break;
 default:
-printf("error input")
+printf("error input");
 }
 }
-display()
+display();
 {
 int i;
 if (front == -1){
 printf("Queue is empty");
 }
 else{
-print("queue is: ")
+print("queue is: ");
 for (i=front;i<=rear;i++)
 printf("%d",queue_arr[i]);
-printf("\n")
+printf("\n");
 }
 }
-insert(){
+insert();{
 int add_item;
 if(rear==MAX-1)
 printf("queue is full. overflow");
@@ -47,14 +51,15 @@ rear=rear+1;
 queue_arr[rear]=add_item;
 }
 }
-delete(){
+delete();{
 if(front==-1 || front>rear)
 {
 printf("queue underflow");
 return;
 }
 else{
-printf("deleted= %d",queue[front]);
+printf("deleted= %d",queue_arr[front]);
 front=front+1;
+}
 }
 }
